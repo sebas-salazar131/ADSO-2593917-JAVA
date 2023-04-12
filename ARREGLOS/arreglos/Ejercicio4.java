@@ -1,30 +1,33 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Ejercicio4 {
-    public static void main(String[]args){
 
-        Scanner entrada=new  Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("señor usuario ingrese un numero");
-        int n=entrada.nextInt();
+        
+        System.out.print("Ingrese la cantidad de números en el arreglo: ");
+        int n = scanner.nextInt();
 
-        int [] arreglo = new int[n];
-        for(int i=0;i<arreglo.length;i++){
-            System.out.println("ingrese los numeros enteros");
-             arreglo[i]=entrada.nextInt();
-        }    
-        for (int i=0;i<arreglo.length;i++){
-            for(int j=0;j<arreglo.length;i++){
-                if(arreglo[j]>arreglo[j+1]){
-                    int aux=arreglo[j];
-                    arreglo[j]=arreglo[j+1];
-                    arreglo[j+1]=aux;
-                }
-            }
+        
+        int[] arreglo = new int[n];
+        System.out.println("Ingrese " + n + " números para llenar el arreglo:");
+        for (int i = 0; i < n; i++) {
+            arreglo[i] = scanner.nextInt();
         }
-        for(int i=0;i<arreglo.length;i++){
-            System.out.println("este es el orden decendente");
-            System.out.println("["+arreglo[i]+"]");
+
+        
+        System.out.println("Arreglo original: " + Arrays.toString(arreglo));
+
+        
+        Arrays.sort(arreglo);
+        int[] arregloOrdenado = new int[n];
+        for (int i = 0; i < n; i++) {
+            arregloOrdenado[i] = arreglo[n - i - 1];
         }
+
+       
+        System.out.println("Arreglo ordenado en orden descendente: " + Arrays.toString(arregloOrdenado));
     }
-}    
+}
