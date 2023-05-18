@@ -300,8 +300,8 @@ public class Modificar_usuario extends javax.swing.JFrame {
 
     private boolean Buscar(){
         for(int i=0; i<this.vent_menu.listaPersonas.length; i++){         
-            if(this.vent_menu.listaPersonas[pos]!=null){        
-             String cedula = this.vent_menu.listaPersonas[pos].getCedula();
+            if(this.vent_menu.listaPersonas[i]!=null){        
+             String cedula = this.vent_menu.listaPersonas[i].getCedula();
              String cedula_modificar=input_cedula_modificar.getText();
                 if( cedula_modificar.equals(cedula)){
                     this.pos=i;
