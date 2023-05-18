@@ -3,14 +3,14 @@ package Principal;
 
 
 public class Modificar_usuario extends javax.swing.JFrame {
-
+    int pos; 
     Menu vent_menu;
     public Modificar_usuario(Menu vent_menu) {
+        this.pos=0;
         this.vent_menu=vent_menu;
         initComponents();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -276,14 +276,17 @@ public class Modificar_usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_input_cedula_modificarActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        Boolean encontrar=false;
-                
-        for(int i=0; i<this.vent_menu.listaPersonas.length; i++){
-            if(this.vent_menu.listaPersonas[i]!=null){
-             String cedula = this.vent_menu.listaPersonas[i].getCedula();
+           
+        this.Buscar();
+    }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private boolean Buscar(){
+        for(int i=0; i<this.vent_menu.listaPersonas.length; i++){         
+            if(this.vent_menu.listaPersonas[pos]!=null){        
+             String cedula = this.vent_menu.listaPersonas[pos].getCedula();
              String cedula_modificar=input_cedula_modificar.getText();
                 if( cedula_modificar.equals(cedula)){
-                    encontrar=true;
+                    this.pos=i;
                     mostrar_resultado.setText("Cedula Encontrada");
                     input_cedula.setEnabled(true);
                     input_nombre.setEnabled(true);
@@ -292,6 +295,7 @@ public class Modificar_usuario extends javax.swing.JFrame {
                     input_direccion.setEnabled(true);
                     input_email.setEnabled(true);
                     btn_modificar.setEnabled(true);
+                    return true;
                 }else{
                     mostrar_resultado.setText("Cedula NO Encontrada");
                     input_cedula.setEnabled(false);
@@ -306,32 +310,25 @@ public class Modificar_usuario extends javax.swing.JFrame {
             }
                 
         }
-    }//GEN-LAST:event_btn_buscarActionPerformed
-
+        return false;
+    }
+    
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
-        for(int i=0; i<this.vent_menu.listaPersonas.length; i++){
-            if(this.vent_menu.listaPersonas[i]!=null){
-                String cedula = this.vent_menu.listaPersonas[i].getCedula();
-                String cedula_modificar=input_cedula_modificar.getText();
-                if( cedula_modificar.equals(cedula)){
-                    String cedulaa=input_cedula.getText();
-                    String nombre=input_nombre.getText();
-                    String apellido=input_apellido.getText();
-                    String telefono=input_telefono.getText();
-                    String direccion=input_direccion.getText();
-                    String email=input_email.getText();
-                    this.vent_menu.listaPersonas[i].setCedula(cedulaa);
-                    this.vent_menu.listaPersonas[i].setNombres(nombre);
-                    this.vent_menu.listaPersonas[i].setApellidos(apellido);
-                    this.vent_menu.listaPersonas[i].setTelefonos(telefono);
-                    this.vent_menu.listaPersonas[i].setDireccion(direccion);
-                    this.vent_menu.listaPersonas[i].setEmail(email);
-                    mostrar_resultado.setText("Cambios Guardados");
-                }    
-               
-            }
-                
-        }
+
+        String cedulaa=input_cedula.getText();
+        String nombre=input_nombre.getText();
+        String apellido=input_apellido.getText();
+        String telefono=input_telefono.getText();
+        String direccion=input_direccion.getText();
+        String email=input_email.getText();
+        this.vent_menu.listaPersonas[this.pos].setCedula(cedulaa);
+        this.vent_menu.listaPersonas[this.pos].setNombres(nombre);
+        this.vent_menu.listaPersonas[this.pos].setApellidos(apellido);
+        this.vent_menu.listaPersonas[this.pos].setTelefonos(telefono);
+        this.vent_menu.listaPersonas[this.pos].setDireccion(direccion);
+        this.vent_menu.listaPersonas[this.pos].setEmail(email);
+        mostrar_resultado.setText("Cambios Guardados");         
+        
     }//GEN-LAST:event_btn_modificarActionPerformed
 
     private void btn_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_volverActionPerformed

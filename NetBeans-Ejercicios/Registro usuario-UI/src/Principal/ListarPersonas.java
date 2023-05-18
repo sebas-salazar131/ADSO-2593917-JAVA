@@ -7,6 +7,11 @@ public class ListarPersonas extends javax.swing.JFrame {
     public ListarPersonas(Menu vent_menu) {
         this.vent_menu= vent_menu;
         initComponents();
+        initAlternComponents();
+    }
+    public void initAlternComponents(){
+        setLocationRelativeTo(null);
+        setIconImage(getToolkit().createImage(ClassLoader.getSystemResource("imagenes/icono_almacenes.png")));
     }
 
 
@@ -77,6 +82,7 @@ public class ListarPersonas extends javax.swing.JFrame {
         mostrar_usuarios.setEditable(false);
         mostrar_usuarios.setBackground(new java.awt.Color(255, 255, 255));
         mostrar_usuarios.setColumns(20);
+        mostrar_usuarios.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
         mostrar_usuarios.setRows(5);
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 153));
@@ -163,7 +169,7 @@ public class ListarPersonas extends javax.swing.JFrame {
                 String direccion=this.vent_menu.listaPersonas[i].getDireccion();
                 String telefono=this.vent_menu.listaPersonas[i].getTelefonos();
                 String email=this.vent_menu.listaPersonas[i].getEmail();
-                String texto="#"+i+"   "+cedula+"  -  "+nombre+"  -  "+apellido+"  -  "+direccion+"  -  "+telefono+"  -  "+email+"\n";
+                String texto="#"+i+"        "+cedula+"  -  "+nombre+"  -  "+apellido+"  -  "+direccion+"  -  "+telefono+"  -  "+email+"\n";
                 mostrar_usuarios.append(texto);
             }
         }

@@ -7,6 +7,11 @@ public class Eliminar extends javax.swing.JFrame {
     public Eliminar(Menu vent_menu) {
         this.vent_menu=vent_menu;
         initComponents();
+        initAlternComponents();
+    }
+    public void initAlternComponents(){
+        setLocationRelativeTo(null);
+        setIconImage(getToolkit().createImage(ClassLoader.getSystemResource("imagenes/icono_almacenes.png")));
     }
 
 
