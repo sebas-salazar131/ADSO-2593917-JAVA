@@ -61,12 +61,12 @@ public class Eliminar extends javax.swing.JFrame {
                     .addGroup(panel_tituLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(input_cedula_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_tituLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(etq_titu)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         panel_tituLayout.setVerticalGroup(
             panel_tituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,10 +74,10 @@ public class Eliminar extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(etq_titu, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panel_tituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(input_cedula_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panel_tituLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(input_cedula_eliminar)
                     .addComponent(btn_eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
@@ -102,19 +102,19 @@ public class Eliminar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(btn_volver, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(95, 95, 95)
+                        .addComponent(mostrar_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(mostrar_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(200, 200, 200)
+                        .addComponent(btn_volver, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mostrar_eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mostrar_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(btn_volver, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -142,17 +142,12 @@ public class Eliminar extends javax.swing.JFrame {
         for(int i=0; i<this.vent_menu.listaPersonas.length; i++){
             if(this.vent_menu.listaPersonas[i]!=null){
              String cedula = this.vent_menu.listaPersonas[i].getCedula();
-             String nombre= this.vent_menu.listaPersonas[i].getNombres();
-             String apellido=this.vent_menu.listaPersonas[i].getApellidos();
              String cedula_eliminar=input_cedula_eliminar.getText();
                 if( cedula_eliminar.equals(cedula)){
                     pos=i;
                     for(int j=pos; j<this.vent_menu.listaPersonas.length-1; j++){
                         this.vent_menu.listaPersonas[j]=this.vent_menu.listaPersonas[j+1];
-                        mostrar_eliminar.setText("El Usuario:  \n");
-                        mostrar_eliminar.append(nombre+"   "+apellido+"\n");
-                        mostrar_eliminar.append("Se ha eliminado");
-                       
+                        mostrar_eliminar.setText("El Usuario se ha eliminado");
                     }
                 }else{
                     mostrar_eliminar.setText("Ingrese correctamente la cedula");

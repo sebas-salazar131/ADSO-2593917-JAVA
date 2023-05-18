@@ -46,7 +46,6 @@ public class Modificar_usuario extends javax.swing.JFrame {
         btn_modificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Modificar");
         setBackground(new java.awt.Color(255, 204, 204));
 
         panel_titu.setBackground(new java.awt.Color(255, 204, 204));
@@ -294,7 +293,7 @@ public class Modificar_usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_input_cedula_modificarActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        
+           
         this.Buscar();
     }//GEN-LAST:event_btn_buscarActionPerformed
 
@@ -312,7 +311,8 @@ public class Modificar_usuario extends javax.swing.JFrame {
                     input_telefono.setEnabled(true);
                     input_direccion.setEnabled(true);
                     input_email.setEnabled(true);
-                    btn_modificar.setEnabled(true);     
+                    btn_modificar.setEnabled(true);
+                      
                     return true;
                 }else{
                     mostrar_resultado.setText("Cedula NO Encontrada");
@@ -325,7 +325,8 @@ public class Modificar_usuario extends javax.swing.JFrame {
                     btn_modificar.setEnabled(false);
                    
                 }
-            }   
+            }
+                 
         }
         
         return false;
