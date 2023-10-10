@@ -2,7 +2,7 @@ package principal;
 
 import java.util.HashMap;
 import java.util.Map;
-import Personas.ListaPersonas;
+import Personas.Menu;
 
 public class Principal {
     public static void main(String[] args) {
@@ -42,7 +42,7 @@ public class Principal {
         deleteData.put("cedula", "102200");
         System.out.println("Consumo DELETE: " + ejemplo.consumoPOST("http://localhost/APIenPHP/Delete.php", deleteData));
         
-        ListaPersonas ventana= new ListaPersonas();
+        Menu ventana= new Menu();
         ventana.setVisible(true);
         
     }    

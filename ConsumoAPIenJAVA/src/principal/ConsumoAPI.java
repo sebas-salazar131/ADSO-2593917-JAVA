@@ -102,7 +102,7 @@ public class ConsumoAPI {
         }
     }
     
-    public String consumoPOST(String endpoint){
+    public String consumoPOST(String endpoint, String jsonData){
         try {
             // URL de la API
             URL url = new URL(endpoint);
